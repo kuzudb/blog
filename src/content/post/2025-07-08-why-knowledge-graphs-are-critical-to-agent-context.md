@@ -99,5 +99,5 @@ One interesting new application that's emerging is the use of tools (i.e., datab
 
 Building agentic applications? We'd love to discuss your use case and how knowledge graphs can enhance your memory layer. Reach out me at ardan@kuzudb.com or just `pip install kuzu` to get started.
 
-To learn more and engage with an active community building with agents and graphs, join us on [Discord](https://kuzudb.com/chat) and star
+To learn more and engage with an active community building with agents and graphs, join us on [Discord](https://kuzudb.github.io/chat) and star
 Kuzu on [GitHub](https://github.com/kuzudb/kuzu).

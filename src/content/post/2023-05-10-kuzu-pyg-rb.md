@@ -67,7 +67,7 @@ conn.execute('COPY cites FROM "%s";' % ('./edge_index.csv'))
 print("All done!")
 ```
 
-The one important note here is that you should store your node features using [Kuzu's FIXED-LIST data type](https://kuzudb.com/docs/cypher/data-types/list.html) using `FLOAT[128]` syntax (instead of the less efficient VAR-LIST data type, which uses `FLOAT[]` syntax for lists that can have different lengths). FIXED-LIST is a data type that we specifically added to Kuzu to efficiently store node features and embeddings in graph ML applications.
+The one important note here is that you should store your node features using [Kuzu's FIXED-LIST data type](https://kuzudb.github.io/docs/cypher/data-types/list.html) using `FLOAT[128]` syntax (instead of the less efficient VAR-LIST data type, which uses `FLOAT[]` syntax for lists that can have different lengths). FIXED-LIST is a data type that we specifically added to Kuzu to efficiently store node features and embeddings in graph ML applications.
 
 ## Step 2: Get Kuzu Remote Backend by Calling `db.get_torch_geometric_remote_backend()`
 
@@ -223,7 +223,7 @@ We will be doing two immediate optimizations in the next few releases
 related to Kuzu's PyG integration.
 First, we will change our `graph_store` to use an in DBMS subgraph sampler, so we can virtually work at any limited memory level.
 Second, in an even earlier release, we had a more basic PyG integration feature, the
-[`QueryResult.get_as_torch_geometric()`](https://kuzudb.com/docs/client-apis/python-api/query-result.html#query_result.QueryResult.get_as_torch_geometric) function.
+[`QueryResult.get_as_torch_geometric()`](https://kuzudb.github.io/docs/client-apis/python-api/query-result.html#query_result.QueryResult.get_as_torch_geometric) function.
 This feature is more of an ETL feature. It is designed for cases where you want to filter
 a subset of your nodes and edges and convert them directly into PyG `HeteroData` objects (i.e., use PyG's default in-memory storage)
 as you build PyG pipelines using graph databases you store in Kuzu.

@@ -540,7 +540,7 @@ you curious to learn more.
 
 You can check out the code and data to reproduce this entire workflow
 [here](https://github.com/kuzudb/dspy-kuzu-demo). Stay tuned for more,
-star [Kuzu](https://github.com/kuzudb/kuzu) on GitHub, and reach out to us on [Discord](https://kuzudb.com/chat),
+star [Kuzu](https://github.com/kuzudb/kuzu) on GitHub, and reach out to us on [Discord](https://kuzudb.github.io/chat),
 or on [X](https://x.com/kuzudb), to share your thoughts! 🚀
 
 ---

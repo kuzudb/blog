@@ -1,42 +1,42 @@
 {
   "team": {
     "name": "Kuzu Team",
-    "image": "https://kuzudb.com/favicon-32x32.png",
+    "image": "https://kuzudb.github.io/favicon-32x32.png",
     "bio": "Developers at Kùzu Inc."
   },
   "semih": {
     "name": "Semih Salihoğlu",
-    "image": "https://kuzudb.com/team/Semih.png",
+    "image": "https://kuzudb.github.io/team/Semih.png",
     "bio": "CEO of Kùzu Inc. &\nAssociate Prof. at UWaterloo"
   },
   "chang": {
     "name": "Chang Liu",
-    "image": "https://kuzudb.com/team/Chang.png",
+    "image": "https://kuzudb.github.io/team/Chang.png",
     "bio": "DevOps Engineer &\nCo-founder of Kùzu Inc."
   },
   "guodong": {
     "name": "Guodong Jin",
-    "image": "https://kuzudb.com/team/Guodong.png",
+    "image": "https://kuzudb.github.io/team/Guodong.png",
     "bio": "Software Engineer &\nCo-founder of Kùzu Inc."
   },
   "xiyang": {
     "name": "Xiyang Feng",
-    "image": "https://kuzudb.com/team/Xiyang.png",
+    "image": "https://kuzudb.github.io/team/Xiyang.png",
     "bio": "Software Engineer &\nCo-founder of Kùzu Inc."
   },
   "ziyi": {
     "name": "Ziyi Chen",
-    "image": "https://kuzudb.com/team/Ziyi.png",
+    "image": "https://kuzudb.github.io/team/Ziyi.png",
     "bio": "Software Engineer &\nCo-founder of Kùzu Inc."
   },
   "prashanth": {
     "name": "Prashanth Rao",
-    "image": "https://kuzudb.com/team/Prashanth.png",
+    "image": "https://kuzudb.github.io/team/Prashanth.png",
     "bio": "AI Engineer at Kùzu Inc."
   },
   "ardan": {
     "name": "Ardan Arac",
-    "image": "https://kuzudb.com/team/Ardan.png",
+    "image": "https://kuzudb.github.io/team/Ardan.png",
     "bio": "CPO & Co-founder\nof Kùzu Inc."
   }
 }

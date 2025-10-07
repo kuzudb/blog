@@ -377,7 +377,7 @@ such as prompt optimization and fine-tuning becoming more and more accessible, i
 exploring ways to get general-purpose models to write better Cypher, too!
 
 If you're working on these kinds of problems and are interested in building Graph RAG workflows,
-join us on [Kuzu Discord](https://kuzudb.com/chat) and let's chat!
+join us on [Kuzu Discord](https://kuzudb.github.io/chat) and let's chat!
 
 ## Code
 

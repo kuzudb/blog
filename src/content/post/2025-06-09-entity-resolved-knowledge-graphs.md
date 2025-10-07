@@ -381,7 +381,7 @@ to build robust, high-quality and **scalable** knowledge graphs to help uncover 
 all sorts of interesting domains.
 
 We hope you found this hands-on demo useful! Please give Kuzu a star [on GitHub](https://github.com/kuzudb/kuzu),
-and reach out to us on [Discord](https://kuzudb.com/chat) to learn more about building entity-resolved knowledge graphs.
+and reach out to us on [Discord](https://kuzudb.github.io/chat) to learn more about building entity-resolved knowledge graphs.
 
 ## Code and data
 

@@ -615,7 +615,7 @@ to be following these developments and contributing integrations to this ever-gr
 Over the coming months, I'll be exploring and building with some of these
 agent frameworks, so stay tuned for more posts on this topic!
 
-Join the Kuzu team on [Discord](https://kuzudb.com/chat) to ideate on your next Graph RAG
+Join the Kuzu team on [Discord](https://kuzudb.github.io/chat) to ideate on your next Graph RAG
 or agentic application!
 
 ## Code
