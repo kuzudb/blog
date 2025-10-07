@@ -1,7 +1,6 @@
 ---
 import Header from "@components/Header.astro";
 import Hero from "@components/Hero.astro";
-import FeaturedVideos from "@components/FeaturedVideos.astro";
 import Footer from "@components/Footer.astro";
 import config from "@config/config.json";
 import Banner from "@components/Banner.astro";
@@ -103,7 +102,6 @@ if (!finalTitle.includes("Kuzu")) {
     <main class="mx-auto max-w-screen-lg px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
       <slot />
     </main>
-    {!blogpost && config.features.youtube && <FeaturedVideos />}
     <Footer />
     <script>
       // This is a hack to get vite-plugin-pwa to generate a sw.js file.
