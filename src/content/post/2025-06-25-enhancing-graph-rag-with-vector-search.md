@@ -32,7 +32,7 @@ The schema of this graph is shown below.
 ---
 
 #### TL;DR: The key takeaways are:
- 
+
 - **Not 0 to 1**: Real world agentic systems exhibit a spectrum of autonomy (the degree of autonomy in the
 system is not binary). These systems are typically a combination of autonomous agentic components driven by LLMs,
 and deterministic components that involve hardcoded logic.
@@ -84,7 +84,7 @@ and guardrails to guide the system towards the desired outcome.
 
 ## Why Graph RAG is inherently agentic
 
-Per the definition from [prior posts](/post/llms-in-each-stage-of-a-graph-rag-chatbot) in this blog, Graph RAG is a form of RAG where the retrieval
+Graph RAG is a form of RAG where the retrieval
 step depends on a knowledge graph, providing the answer-generation LLM relevant context based on factual
 information in the graph -- this is in contrast to retrieving the "most semantically similar"
 text based on embeddings of unstructured data in vector-based RAG.
