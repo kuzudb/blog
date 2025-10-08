@@ -18,7 +18,7 @@ and use Kuzu Explorer to visualize the resulting RDF graph.
 
 ## Basics of RDF
 
-Our [earlier blog post](../in-praise-of-rdf) on RDF and Kuzu's [docs](https://docs.kuzudb.com/rdf-graphs/rdf-basics/)
+Our [earlier blog post](../in-praise-of-rdf) on RDF and Kuzu's [docs](https://kuzudb.github.io/docs/rdf-graphs/rdf-basics/)
 provide a much more detailed explanation on RDF and when it is useful, but for the purposes
 of this post, a brief summary of the terminology is provided in the table below:
 
@@ -308,7 +308,7 @@ Veronika Heimsbakk and Ivo Velitchkov.
 
 When building and validating RDF graphs, the ability to get visual feedback is quite useful. Kuzu
 Explorer is a web-based interface that allows you to visualize RDF graphs and query them using Cypher (no knowledge of SPARQL required).
-The instructions to launch Kuzu Explorer and connect to an existing database are shown in [the docs](https://docs.kuzudb.com/visualization/).
+The instructions to launch Kuzu Explorer and connect to an existing database are shown in [the docs](https://kuzudb.github.io/docs/visualization/).
 
 ```bash
 docker run -p 8000:8000 \
@@ -316,7 +316,7 @@ docker run -p 8000:8000 \
     --rm kuzudb/explorer:latest
 ```
 
-In a nutshell, Kuzu's [RDFGraphs extension](https://docs.kuzudb.com/rdf-graphs/) creates four distinct tables when the RDF data is loaded into the database:
+In a nutshell, Kuzu's [RDFGraphs extension](https://kuzudb.github.io/docs/rdf-graphs/) creates four distinct tables when the RDF data is loaded into the database:
 
 - `UniKG_l`: A node table that contains literals
 - `UniKG_r`: A node table that contains resources, where the primary key is the unique IRI
@@ -381,7 +381,7 @@ Under the hood, Kuzu's query processor will use its native structured property
 graph model to plan and optimize the query, so there are no negative performance implications when using Cypher.
 
 You can also extend Kuzu's RDFGraphs with other property graphs, and query both your triples
-*and* the other property graphs with a uniform query language, Cypher. See Kuzu's [documentation](https://docs.kuzudb.com/rdf-graphs/rdfgraphs-overview#querying-of-regular-node-and-relationship-tables-and-rdfgraphs) page for more information.
+*and* the other property graphs with a uniform query language, Cypher. See Kuzu's [documentation](https://kuzudb.github.io/docs/rdf-graphs/rdfgraphs-overview#querying-of-regular-node-and-relationship-tables-and-rdfgraphs) page for more information.
 
 ---
 
@@ -389,7 +389,7 @@ You can also extend Kuzu's RDFGraphs with other property graphs, and query both 
 When running SPARQL queries via RDFLib on top of a Kuzu backend, keep in mind that all the
 RDF triples are pulled into memory, so this may not work well for larger graphs where the triples
 do not fit in memory. However, in such cases, you could still query the RDF graph directly in Cypher
-via Kuzu's [RDFGraphs](https://docs.kuzudb.com/rdf-graphs/rdfgraphs-overview/)
+via Kuzu's [RDFGraphs](https://kuzudb.github.io/docs/rdf-graphs/rdfgraphs-overview/)
 while also retaining query performance.
 
 ---
@@ -414,7 +414,7 @@ Check out the examples in Derwen.ai's [kglab](https://github.com/DerwenAI/kglab)
 other RDFLib plugins you get access to in Python.
 
 We hope this post has provided a good starting point for you to explore RDF data models, SHACL, and how
-to combine them using Kuzu as your graph backend. Feel free to go through our RDFGraphs [documentation](https://docs.kuzudb.com/rdf-graphs/)
+to combine them using Kuzu as your graph backend. Feel free to go through our RDFGraphs [documentation](https://kuzudb.github.io/docs/rdf-graphs/)
 to learn more!
 
 ## Code

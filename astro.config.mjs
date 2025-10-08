@@ -17,7 +17,7 @@ import { manifest } from './src/utils/manifest';
 // https://astro.build/config
 export default defineConfig({
   root: '.',
-  site: 'https://blog.kuzudb.com',
+  site: 'https://kuzudb.github.io/blog',
   image: {
     remotePatterns: [{ protocol: 'https' }],
   },

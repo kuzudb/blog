@@ -121,7 +121,7 @@ starting with a routing-based approach, and testing it end-to-end to see if the 
 
 ## Create a vector index
 
-Kuzu provides a performant, on-disk HNSW index via a [vector extension](https://docs.kuzudb.com/extensions/vector/)
+Kuzu provides a performant, on-disk HNSW index via a [vector extension](https://kuzudb.github.io/docs/extensions/vector/)
 that scales as your data grows in size. You simply store vector embeddings (which are basically
 floating point arrays of a fixed dimensionality) as properties on your node tables. In this graph, there will be two
 vector indices -- one for the `Condition` node table's `name` property, and another for the `Symptom` node table's

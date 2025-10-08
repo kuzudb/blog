@@ -349,7 +349,7 @@ natural to reason about.
 
 ### Use Kuzu DDL as schema
 
-Kuzu uses the structured property graph model and provides a [DDL](https://docs.kuzudb.com/cypher/data-definition/create-table/#create-a-node-table)
+Kuzu uses the structured property graph model and provides a [DDL](https://kuzudb.github.io/docs/cypher/data-definition/create-table/#create-a-node-table)
 (data definition language) to define the schema of the graph. This contains all the right information that could serve as context for an LLM.
 We can potentially use Kuzu's DDL schema (which is incredibly easy to generate via the CLI, and is already a part of the code base)
 as a prompt format instead of JSON/XML. Initial experiments with pruning the DDL schema are promising

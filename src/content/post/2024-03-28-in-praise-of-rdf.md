@@ -23,7 +23,7 @@ to know about. As I will highlight,
 RDF can even play an increasingly important role in the era of LLM-based applications. 
 I will also discuss some fascinating topics in AI that intersect with databases:
 logic, reasoning, and knowledge representation systems. 
-I also put in a minor plug at the end for a new feature we added called [RDFGraphs](https://docs.kuzudb.com/rdf-graphs/),
+I also put in a minor plug at the end for a new feature we added called [RDFGraphs](https://kuzudb.github.io/docs/rdf-graphs/),
 to import and query RDF data in Kuzu.
 
 
@@ -52,7 +52,7 @@ to import and query RDF data in Kuzu.
   here is a [great article](https://arxiv.org/ftp/arxiv/papers/2308/2308.04445.pdf) 
   by the late [Douglas Lenat](https://en.wikipedia.org/wiki/Douglas_Lenat).
 
-- **Kuzu RDFGraphs**: [RDFGraphs](https://docs.kuzudb.com/rdf-graphs/) is a new feature in Kuzu to map RDF triples into Kuzu's structured property graph model.
+- **Kuzu RDFGraphs**: [RDFGraphs](https://kuzudb.github.io/docs/rdf-graphs/) is a new feature in Kuzu to map RDF triples into Kuzu's structured property graph model.
   This way you can query RDF datasets in Cypher, enhance them with property graph data, and benefit from
   Kuzu's fast query processor.
 ---
@@ -475,7 +475,7 @@ I want to end with several notes.
 
 #### A minor plug for Kuzu RDFGraphs
 
-First, I want to highlight a new feature we introduced in Kuzu called [RDFGraphs](https://docs.kuzudb.com/rdf-graphs/).
+First, I want to highlight a new feature we introduced in Kuzu called [RDFGraphs](https://kuzudb.github.io/docs/rdf-graphs/).
 Let me emphasize here that Kuzu's native data model is **not** RDF -- it is structured property graphs. But, part of our mission
 is to simplify graph modeling for people and the other part is to develop the most 
 competent GDBMS out there in terms of performance and scalability, which we do by basing our core
@@ -486,7 +486,7 @@ CSV files, RDBMSs, or are already in an RDF triple format. In light of this,
 RDFGraphs is a lightweight extension of our structured property graph model that allows users to map RDF triples into a Kuzu database. Once
 your triples are in Kuzu, you can query them with Cypher (no inference of course), 
 and further enhance them with other records you have modeled as a property graph.
-We also have some [pre-loaded RDFGraphs](https://docs.kuzudb.com/rdf-graphs/rdfgraphs-repo) 
+We also have some [pre-loaded RDFGraphs](https://kuzudb.github.io/docs/rdf-graphs/rdfgraphs-repo) 
 you can download and start playing around with.
 
 #### Remembering logic-based databases in the era of LLMs

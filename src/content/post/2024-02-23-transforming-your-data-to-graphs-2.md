@@ -405,7 +405,7 @@ reach out to us on [Discord](https://discord.gg/VtX2gw9Rug) with your experience
 
 The code to reproduce the workflow shown in this post can be found in the
 [graphdb-demo](https://github.com/kuzudb/graphdb-demo/tree/main/src/python/transactions_with_disputes) repository.
-It uses Kuzu's Python API, but you are welcome to use the client API [of your choice](//docs.kuzudb.com/client-apis).
+It uses Kuzu's Python API, but you are welcome to use the client API [of your choice](//kuzudb.github.io/docs/client-apis).
 
 ## Further reading
 

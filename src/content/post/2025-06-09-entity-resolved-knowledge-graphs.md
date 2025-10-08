@@ -400,7 +400,7 @@ with `map_rows`), which is why Polars expressions are _much_ faster than Python 
 See their [docs](https://docs.pola.rs/api/python/dev/reference/expressions/api/polars.when.html)
 for more examples on `when-then-otherwise` expressions.
 
-[^3]: Kuzu provides a native [graph algorithms package](https://docs.kuzudb.com/extensions/algo/) (available as
+[^3]: Kuzu provides a native [graph algorithms package](https://kuzudb.github.io/docs/extensions/algo/) (available as
 an extension), which contains several popular graph algorithms, with more being added as of writing this blog post.
 For algorithms that are not yet available natively in Kuzu, NetworkX is a good alternative as it contains
 an extensive suite of graph algorithms. Converting between a Kuzu subgraph and a NetworkX graph is also straightforward.

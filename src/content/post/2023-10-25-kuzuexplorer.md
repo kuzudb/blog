@@ -14,13 +14,13 @@ Today, we are happy to announce the release of KùzuExplorer, a browser-based fr
 visualize and explore database schemas and query results in the form of a graph, table, or in JSON.
 This is a very useful tool for exploring databases and debugging applications during prototyping
 phase. This post describes a brief overview of the main features of KùzuExplorer with pointers to
-[KùzuExplorer documentation](https://docs.kuzudb.com/visualization/) for details.
+[KùzuExplorer documentation](https://kuzudb.github.io/docs/visualization/) for details.
 
 ## Launching KùzuExplorer
 
 KùzuExplorer is a web application that is launched from a deployed Docker image. Assuming you have Docker
 installed before proceeding, you can launch KùzuExplorer on an existing DBMS you have or on an empty database.
-Details about how to launch KùzuExplorer can be found [here](https://docs.kuzudb.com/visualization/#launching-kuzuexplorer).
+Details about how to launch KùzuExplorer can be found [here](https://kuzudb.github.io/docs/visualization/#launching-kuzuexplorer).
 For example, to start KùzuExplorer on an empty
 database, you can simply run the following command on your shell, and then access KùzuExplorer by going to
 `http://localhost:8000`
@@ -43,17 +43,17 @@ Node and Relationship tables in your database in a node-link view on the left. U
 you can do several things to explore and modify your tables, such as by adding new properties to your
 node/rel tables, inserting new node/rel tables, or dropping node/rel tables. These changes can all be done
 interactively by clicking buttons, which automatically generate and run the corresponding Cypher queries
-(unless you have launched KùzuExplorer [in read-only mode](https://docs.kuzudb.com/visualization/#access-mode)).
+(unless you have launched KùzuExplorer [in read-only mode](https://kuzudb.github.io/docs/visualization/#access-mode)).
 
 ![](/img/2023-10-25-kuzuexplorer/schema-panel.png)
 
 More details
-about what can be done in the Schema panel can be found [here](https://docs.kuzudb.com/visualization/schema-panel).
+about what can be done in the Schema panel can be found [here](https://kuzudb.github.io/docs/visualization/schema-panel).
 
 ## Shell Panel: Query Result Visualization
 
 Using KùzuExplorer, you can also issue Cypher queries similar to Kuzu's
-[command line interface](//docs.kuzudb.com/installation#command-line), and
+[command line interface](//kuzudb.github.io/docs/installation#command-line), and
 visualize the results of these queries.
 To issue queries go to the `Shell` tab on the right corner and you can type a Cypher query.
 As you type your query, KùzuExplorer shell will suggest keyword completions, which can
@@ -71,14 +71,14 @@ RETURN *
 ![](/img/2023-10-25-kuzuexplorer/query-result-node-link-view.png)
 
 You can inspect individual nodes and edge in the query results by clicking on them. More details
-about what can be done in the Shell panel can be found [here](https://docs.kuzudb.com/visualization/shell-panel).
+about what can be done in the Shell panel can be found [here](https://kuzudb.github.io/docs/visualization/shell-panel).
 
 ## Settings Panel: Configuring Visualizations
 
 There is also a Settings tab on the right hand corner, which can be used for several more advanced
 setting changes, e.g., changing the colors or sizes of nodes of a certain type (e.g., `User` nodes) or
 the maximum number of nodes to plot on the node-link graph visualizations when visualizing query results.
-Details of these can be found [here](https://docs.kuzudb.com/visualization/settings-panel).
+Details of these can be found [here](https://kuzudb.github.io/docs/visualization/settings-panel).
 
 ## Final Words
 

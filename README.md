@@ -33,7 +33,7 @@ To configure the blog, edit the `src/config/config.json` file. This file contain
 {
   "site": {
     "title": "Blog - Kuzu",
-    "base_url": "blog.kuzudb.com",
+    "base_url": "kuzudb.github.io/blog",
     "base_path": "/",
     "favicon": "/favicon.ico",
     "logoLight": "/logoLight.png",

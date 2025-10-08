@@ -46,7 +46,7 @@ its potential benefits should be subjected to rigorous evaluation, e.g., as majo
 ---
 
 ## RAG-U Overview
-I will skip the overview of RAG systems, which I covered in [the previous post](//docs.kuzudb.com/blog/llms-graphs-part-1#a-note-on-the-term-rag).
+I will skip the overview of RAG systems, which I covered in [the previous post](//kuzudb.github.io/docs/blog/llms-graphs-part-1#a-note-on-the-term-rag).
 The picture of RAG systems that use unstructured data looks as follows:
 
 ![](/img/2024-01-15-llms-graphs-part-2/rag-unstructured-overview.png)

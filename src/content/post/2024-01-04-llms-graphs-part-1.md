@@ -193,7 +193,7 @@ You ultimately construct a string prompt that contains $Q_{NL}$, some
 instructions, and schema of the database, and the LLM will generate a query for you. 
 The `KuzuGraph` and `KuzuQAChain` are simple wrappers to do just that.
 If you want to play around with how well this works on other datasets,
-we have this pipeline implemented in Kuzu's browser frontend [KùzuExplorer](//docs.kuzudb.com/kuzuexplorer/). 
+we have this pipeline implemented in Kuzu's browser frontend [KùzuExplorer](//kuzudb.github.io/docs/kuzuexplorer/). 
 
 That is, for any database you have in Kuzu, you get a natural language interface over it in
 KùzuExplorer (just click the "robot icon" on the left panel). 
