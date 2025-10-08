@@ -14,7 +14,6 @@ Clone this repository to your local machine using Git.
 | `npm run dev`     | Starts local dev server at `localhost:4321`        |
 | `npm run build`   | Build your production site to `./dist/`            |
 | `npm run preview` | Preview your build locally, before deploying       |
-| `npm run youtube` | Fetches the Latest YouTube Channel Videos          |
 
 * Edit the `.astro` files in the `src/pages` directory to add blog, category, tag and other information.
 * The blog layout can be modified from the `src/layouts` directory.
