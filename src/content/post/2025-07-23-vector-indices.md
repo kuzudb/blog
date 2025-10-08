@@ -13,7 +13,7 @@ are used in a wide range of modern LLM-based/agentic applications.
 Vector indices ([1](https://en.wikipedia.org/wiki/Vector_database), [2](https://en.wikipedia.org/wiki/Hierarchical_navigable_small_world), [3](https://github.com/facebookresearch/faiss)),
 which quickly find a set of vectors that are similar to each other 
 are becoming a core part of many modern data systems.
-Since [version 0.9.0](https://blog.kuzudb.com/post/kuzu-0.9.0-release/),
+Since [version 0.9.0](https://kuzudb.github.io/blog/post/kuzu-0.9.0-release/),
 Kuzu also ships with its own native vector index. 
 Our design 
 allows users to do arbitrary hybrid graph and vector search, a capability
