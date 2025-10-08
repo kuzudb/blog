@@ -1,7 +1,7 @@
 {
   "team": {
     "name": "Kuzu Team",
-    "image": "https://kuzudb.github.io/favicon-32x32.png",
+    "image": "/favicon.ico",
     "bio": "Developers at Kùzu Inc."
   },
   "semih": {
