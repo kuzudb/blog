@@ -3,7 +3,7 @@ slug: "transforming-your-data-to-graphs-2"
 title: "Transforming your data to graphs - Part 2"
 description: "Analyzing a transaction network using a combination of Cypher queries, graph visualization and network analysis"
 pubDate: "February 23 2024"
-heroImage: "/img/2024-02-23-transforming-your-data-2/query_disputed_transactions_vicinity.png"
+heroImage: "/blog/img/2024-02-23-transforming-your-data-2/query_disputed_transactions_vicinity.png"
 categories: ["tutorial"]
 authors: ["prashanth"]
 tags: ["data-science", "networkx", "graph-algorithms", "analysis"]
@@ -33,7 +33,7 @@ the client marks a transaction as disputed.
 Imagine that you are an analyst tasked with investigating such a dataset. The most likely source of
 such a dataset would be a relational system, with a schema that looks something like this:
 
-![](/img/2024-02-23-transforming-your-data-2/relational_schema_dispute.png)
+![](/blog/img/2024-02-23-transforming-your-data-2/relational_schema_dispute.png)
 
 The primary table of interest is the `transactions` table, which contains records of all the
 transactions made by a client with a particular merchant. A merchant is a store or a business that
@@ -50,7 +50,7 @@ workloads such as this one.
 
 The following graph schema makes sense for our dataset:
 
-![](/img/2024-02-23-transforming-your-data-2/graph_schema_dispute.png)
+![](/blog/img/2024-02-23-transforming-your-data-2/graph_schema_dispute.png)
 
 The transactions are modelled as edges, with an `is_disputed` property to indicate whether
 a transaction is disputed or not. This simplifies the kinds of queries we need to write, and is
@@ -82,7 +82,7 @@ The script `load_data.py` reads the CSV files and inserts the data into Kuzu usi
 The result of running this script is a graph whose schema matches that shown in the sketch
 above.
 
-![](/img/2024-02-23-transforming-your-data-2/kuzu_explorer_schema.png)
+![](/blog/img/2024-02-23-transforming-your-data-2/kuzu_explorer_schema.png)
 
 ## Exploratory data analysis
 
@@ -129,7 +129,7 @@ RETURN * LIMIT 25;
 
 The dataset contains two merchants belonging to Panera Bread in the city of Boston.
 
-![](/img/2024-02-23-transforming-your-data-2/query_boston_panera.png)
+![](/blog/img/2024-02-23-transforming-your-data-2/query_boston_panera.png)
 
 ## Study disputed transactions
 
@@ -152,7 +152,7 @@ the following image, we mark the `TransactedWith` edges with the boolean value o
 property from the data. Only a small fraction of these transactions have the `is_disputed` property
 marked as `true`.
 
-![](/img/2024-02-23-transforming-your-data-2/query_disputed_transactions_vicinity.png)
+![](/blog/img/2024-02-23-transforming-your-data-2/query_disputed_transactions_vicinity.png)
 
 It can be seen that certain clients interacted with multiple merchants, some of which form a cluster.
 In other cases, nodes in the vicinity of a disputed transaction have no common paths with the larger graph,
@@ -214,7 +214,7 @@ number of clients instead.
 When viewed visually, these results can be quite powerful. The following image shows result from
 above, as seen in Kuzu Explorer.
 
-![](/img/2024-02-23-transforming-your-data-2/dispute_graph_viz.png)
+![](/blog/img/2024-02-23-transforming-your-data-2/dispute_graph_viz.png)
 
 If we simply look at aggregates based on the company and merchant, we see that the clients Olivia,
 Jennifer and Cynthia from the previous query each reported disputed transactions in _different_

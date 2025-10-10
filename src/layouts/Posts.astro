@@ -30,7 +30,7 @@ type PostType = {
       <article class="flex w-full flex-col items-start">
         <div class="rounded overflow-hidden isolate mb-4" style="width: 100%;">
           {post.data.heroImage && (
-            <a href={`/post/${post.slug}/`}>
+            <a href={`/blog/post/${post.slug}/`}>
             <center>
                 <img
                     class="max-w-96 h-36 block bg-white border-2 border-zinc-200"
@@ -48,7 +48,7 @@ type PostType = {
           <FormattedDate date={post.data.pubDate} />
           {post.data.categories.slice(0, 2).map((item) => (
             <a
-              href={`/categories/${slugify(item)}`}
+              href={`/blog/categories/${slugify(item)}`}
               class="capitalize text-md relative z-10 rounded-full bg-zinc-50 px-3 py-1.5 font-medium text-zinc-600 hover:bg-zinc-50 dark:bg-zinc-900 dark:text-zinc-400"
             >
               {item}
@@ -57,7 +57,7 @@ type PostType = {
         </div>
         <div class="relative">
           <h2 class="mt-3 text-xl text-ellipsis font-semibold leading-6 text-zinc-900 dark:text-white group-hover:text-zinc-600">
-            <a href={`/post/${post.slug}/`}>
+            <a href={`/blog/post/${post.slug}/`}>
               <span class="absolute inset-0" />
               {post.data.title}
             </a>

@@ -3,7 +3,7 @@ slug: "transforming-your-data-to-graphs-1"
 title: "Transforming your data to graphs - Part 1"
 description: "Graph thinking for relational data, and the ETL workflow in Kuzu"
 pubDate: "January 24 2024"
-heroImage: "/img/2024-01-24-transforming-your-data-1/edge_tables.png"
+heroImage: "/blog/img/2024-01-24-transforming-your-data-1/edge_tables.png"
 categories: ["tutorial"]
 authors: ["prashanth"]
 tags: ["data-engineering", "etl"]
@@ -64,7 +64,7 @@ goal is to study the transactions and their relationships using graph queries.
 We can imagine this dataset as it exists in a typical relational system. The schema might look
 something like this:
 
-![](/img/2024-01-24-transforming-your-data-1/relational_schema.png)
+![](/blog/img/2024-01-24-transforming-your-data-1/relational_schema.png)
 
 The client table stores unique client IDs and their metadata. The merchant table stores unique
 instances of merchants and what parent company they belong to. Transaction data is stored in the
@@ -88,7 +88,7 @@ merchant, or with merchants in the same city, or with merchants belonging to the
 With these questions in mind, we can proceed to sketch the following graph schema, which is a visual
 representation of a data model that considers how the concepts are connected in the real world.
 
-![](/img/2024-01-24-transforming-your-data-1/graph_schema.png)
+![](/blog/img/2024-01-24-transforming-your-data-1/graph_schema.png)
 
 In the schema above, note how the implicit foreign keys defined in the relational
 schema, such as the one between `Merchant` and `City`, get *explicit* names, such as `LocatedIn`.
@@ -216,7 +216,7 @@ the amount of custom code you have to write, Kuzu provides convenient APIs to
 scan/read from CSV files and to copy data from CSV files to a node or edge table. An example is
 shown below.
 
-![](/img/2024-01-24-transforming-your-data-1/edge_tables.png)
+![](/blog/img/2024-01-24-transforming-your-data-1/edge_tables.png)
 
 The `transaction.csv` file contains the `client_id` and `merchant_id` columns, which are the `FROM`
 and `TO` nodes' primary keys respectively, but these are not present in the first and second columns
@@ -391,7 +391,7 @@ You can then see a query editor in your browser at `http://localhost:8000`.
 
 In the Kuzu explorer window on the browser, click on the `Schema` tab on the top right.
 
-![](/img/2024-01-24-transforming-your-data-1/kuzu_schema_viz.png)
+![](/blog/img/2024-01-24-transforming-your-data-1/kuzu_schema_viz.png)
 
 The above schema is very similar to the one we designed earlier, which is a good sign!
 
@@ -407,7 +407,7 @@ RETURN * LIMIT 50;
 The `RETURN *` keyword passes all the named variables in the query to the visualization engine which
 then renders the graph as follows.
 
-![](/img/2024-01-24-transforming-your-data-1/graph_viz.png)
+![](/blog/img/2024-01-24-transforming-your-data-1/graph_viz.png)
 
 It's possible to customize the visual style of the graph by clicking on the `Settings` tab on the top right.
 

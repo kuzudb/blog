@@ -3,9 +3,9 @@ slug: "rdf-shacl-and-kuzu"
 title: "Validating RDF data with SHACL in Kuzu"
 description: "Combining RDFLib and SHACL to validate RDF data in Kuzu"
 pubDate: "May 14 2024"
-heroImage: "/img/rdf-shacl-kuzu/rdf-running-example.png"
+heroImage: "/blog/img/rdf-shacl-kuzu/rdf-running-example.png"
 categories: ["example"]
-authors: ["prashanth", {"name": "Paco Nathan", "image": "/img/authors/paco-xander-nathan-e1713802414444-150x150.png", "bio": "Managing Partner at Derwen.ai"}]
+authors: ["prashanth", {"name": "Paco Nathan", "image": "/blog/img/authors/paco-xander-nathan-e1713802414444-150x150.png", "bio": "Managing Partner at Derwen.ai"}]
 tags: ["rdf", "shacl", "rdflib", "pyshacl"]
 draft: false
 ---
@@ -100,7 +100,7 @@ equivalent to `kz:Adam rdf:type kz:student`.
 
 Pictorially, this can be represented in RDF as follows:
 
-![](/img/rdf-shacl-kuzu/rdf-running-example.png)
+![](/blog/img/rdf-shacl-kuzu/rdf-running-example.png)
 
 `kz:Adam` is an alias for the IRI `http://kuzu.io/rdf-ex#Adam`, as specified in the prefix section at the top of the Turtle file. Each resource's properties are
 represented as triples between the resource and literals. The relationships between resources are also represented as triples, such as `kz:Adam livesIn kz:Waterloo`.
@@ -330,7 +330,7 @@ MATCH (s)-[p]->(o)
 RETURN *;
 ```
 
-![](/img/rdf-shacl-kuzu/demo-rdf-viz.png)
+![](/blog/img/rdf-shacl-kuzu/demo-rdf-viz.png)
 
 As can be seen, the graph structure is identical to that shown earlier, in the pictorial representation.
 
@@ -338,7 +338,7 @@ The yellow edges represent resource-to-literal relationships (`UniKG_lt`), while
 resource-to-resource relationships (`UniKG_rt`). We can inspect the schema of the RDF graph, including
 each table's primary keys, visually, by clicking on the "Schema" tab in Kuzu Explorer.
 
-![](/img/rdf-shacl-kuzu/demo-rdf-schema.png)
+![](/blog/img/rdf-shacl-kuzu/demo-rdf-schema.png)
 
 ### Query the RDF graph with Cypher
 

@@ -3,7 +3,7 @@ slug: "why-knowledge-graphs-are-critical-to-agent-context"
 title: "Why Knowledge Graphs are Critical to Agent Context"
 description: "How should we organize knowledge to provide the best context for agents? We show how knowledge graphs could play a key role in enhancing context for agents."
 pubDate: "July 8 2025"
-heroImage: "/img/knowledge-graph-and-agent-context/agent-context-rag-2.png"
+heroImage: "/blog/img/knowledge-graph-and-agent-context/agent-context-rag-2.png"
 categories: ["concept"]
 authors: ["ardan"]
 tags: ["graph", "llm", "agent"]
@@ -26,7 +26,7 @@ The traditional RAG approach to retrieve context for the LLM would use vector em
 communications with Acme get embedded into an abstract vector space, your question gets embedded the
 same way, and the system finds semantically similar content through proximity. You might get back:
 
-<img src="/img/knowledge-graph-and-agent-context/agent-context-rag-1.png" alt="Traditional RAG" />
+<img src="/blog/img/knowledge-graph-and-agent-context/agent-context-rag-1.png" alt="Traditional RAG" />
 
 - "Can you send over an updated SLA with the revised uptime guarantees?"
 - "We’re feeling good about the renewal. The partnership's been working well for us."
@@ -42,7 +42,7 @@ Now let's layer a knowledge graph on top of the communication with Acme.
 Instead of retrieving content from an abstract vector space, we first model the core entities -- people,
 contracts, meetings, communications -- and their relationships.
 
-<img src="/img/knowledge-graph-and-agent-context/agent-context-rag-2.png" alt="Knowledge graph-based RAG" />
+<img src="/blog/img/knowledge-graph-and-agent-context/agent-context-rag-2.png" alt="Knowledge graph-based RAG" />
 
 The graph shows that the **contract** is tied to a specific **VP**, the key decision-maker.
 The agent can now be much smarter and focus on the VP.

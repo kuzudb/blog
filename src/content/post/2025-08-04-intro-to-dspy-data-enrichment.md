@@ -3,7 +3,7 @@ slug: "graph-data-enrichment-using-dspy"
 title: "A gentle introduction to DSPy for graph data enrichment"
 description: "Learn how to use DSPy to enrich a graph dataset using LLMs and a vector index in Kuzu."
 pubDate: "August 4 2025"
-heroImage: "/img/intro-to-dspy-data-enrichment/laureates-1.png"
+heroImage: "/blog/img/intro-to-dspy-data-enrichment/laureates-1.png"
 categories: ["example"]
 authors: ["prashanth"]
 tags: ["dspy", "llm", "etl", "entity-disambiguation", "data-enrichment"]
@@ -124,7 +124,7 @@ contains much richer information as shown above. This means that we need to use 
 means to merge these two data sources. Once this is done (as per the methodology discussed below),
 the resulting knowledge graph in Kuzu looks something like this[^6]:
 
-<img src="/img/intro-to-dspy-data-enrichment/laureates-1.png" alt="Nobel laureate mentorship network" width="700" />
+<img src="/blog/img/intro-to-dspy-data-enrichment/laureates-1.png" alt="Nobel laureate mentorship network" width="700" />
 
 This is _much_ more interesting! The graph constructed from the enriched data contains a lot
 of information that was not in the primary source, which means we can now answer questions like this:
@@ -182,7 +182,7 @@ In DSPy, **no prompts are written by a human**. Instead, you declare your _inten
 and the framework automatically generates (and if needed, optimizes) the prompts for you. There are
 three fundamental primitives in DSPy that are important to know about:
 
-<img src="/img/intro-to-dspy-data-enrichment/dspy-primitives.png" alt="DSPy primitives" width="600" />
+<img src="/blog/img/intro-to-dspy-data-enrichment/dspy-primitives.png" alt="DSPy primitives" width="600" />
 
 1. **Signatures**: A `Signature` allows you to define the _**behaviour**_ of your pipeline, via a type system
 that specifies input and output types to the LLM. A signature lets you tell the LLM _what_ it needs to do, rather than specify _how_ it should do it.
@@ -212,7 +212,7 @@ so that we can use vector search to build the context for the LLM-as-a-judge dow
 dataset is transformed into a vector embedding and stored in Kuzu, which provides a fast and convenient-to-use
 vector index.
 
-<img src="/img/intro-to-dspy-data-enrichment/embedding-generation.png" alt="Embedding generation and vector index creation in Kuzu" />
+<img src="/blog/img/intro-to-dspy-data-enrichment/embedding-generation.png" alt="Embedding generation and vector index creation in Kuzu" />
 
 Two separate node tables are created in Kuzu for laureates from each data source. The embeddings are
 created using an embedding model (`nomic-embed-text` in Ollama) and stored as a new column in
@@ -228,7 +228,7 @@ category, year)`, the primary node "George Smith" on the right is most similar t
 because the term "physics" that's used in the embedding, increases its similarity to the latter
 (who won the Physics Nobel prize).
 
-<img src="/img/intro-to-dspy-data-enrichment/similarity-scores.png" alt="Vector similarity scores in Kuzu vector index for two people with the same first and last name" />
+<img src="/blog/img/intro-to-dspy-data-enrichment/similarity-scores.png" alt="Vector similarity scores in Kuzu vector index for two people with the same first and last name" />
 
 ### _LLM as a judge_ with DSPy
 
@@ -347,7 +347,7 @@ and applies the information from the type system of the language (in this case, 
 that looks something like the example below. On the left is the signature and module declaration,
 and on the right are the system and user messages that DSPy generates as part of the prompt for the LLM.
 
-<img src="/img/intro-to-dspy-data-enrichment/generated-prompt.png" alt="DSPy-generated prompt" />
+<img src="/blog/img/intro-to-dspy-data-enrichment/generated-prompt.png" alt="DSPy-generated prompt" />
 
 You can always inspect the generated prompts by calling the `dspy.inspect_history()` function.
 If you're interested, see a more readable version of the
@@ -429,7 +429,7 @@ all the information about laureates and their mentorship relationships. The grap
 of Polars DataFrames and Pydantic, and persisted to a Kuzu database. The schema of this graph contains
 the following nodes and relationships:
 
-<img src="/img/intro-to-dspy-data-enrichment/nobel-schema.png" alt="Graph schema for Nobel laureate mentorship network" width="700" />
+<img src="/blog/img/intro-to-dspy-data-enrichment/nobel-schema.png" alt="Graph schema for Nobel laureate mentorship network" width="700" />
 
 Below, we show a visualization
 of the full graph in G.V()[^6], where you can conveniently size the nodes by their out-degree (number of children) --
@@ -438,7 +438,7 @@ in the early 20th century had an influence across multiple disciplines, with the
 clusters sharing many common connections. The economics clusters are more isolated, which makes sense because the
 field is relatively recent, and is more or less distinct from the pure sciences.
 
-<img src="/img/intro-to-dspy-data-enrichment/mentorship-graph.png" alt="Nobel laureate mentorship network with clusters" />
+<img src="/blog/img/intro-to-dspy-data-enrichment/mentorship-graph.png" alt="Nobel laureate mentorship network with clusters" />
 
 ### Cost implications
 

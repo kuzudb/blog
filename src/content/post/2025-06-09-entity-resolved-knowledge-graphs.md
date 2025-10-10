@@ -3,9 +3,9 @@ slug: "entity-resolved-knowledge-graphs"
 title:  "From data to insights: Entity-resolved knowledge graphs with Kuzu & Senzing"
 description: "Walkthrough of using Kuzu with Senzing, an entity resolution engine, to combine data from Open Ownership and OpenSanctions to uncover financial crimes"
 pubDate: "June 09 2025"
-heroImage: "/img/creating-high-quality-knowledge-graphs/er-banner.png"
+heroImage: "/blog/img/creating-high-quality-knowledge-graphs/er-banner.png"
 categories: ["example"]
-authors: ["prashanth", {"name": "Paco Nathan", "image": "/img/authors/paco-xander-nathan-e1713802414444-150x150.png", "bio": "Principal DevRel Engineer at Senzing"}]
+authors: ["prashanth", {"name": "Paco Nathan", "image": "/blog/img/authors/paco-xander-nathan-e1713802414444-150x150.png", "bio": "Principal DevRel Engineer at Senzing"}]
 tags: ["entity-resolution", "senzing", "high-quality"]
 draft: false
 ---
@@ -45,7 +45,7 @@ who are known to be associated with financial crimes.
 A "beneficial owner" is a natural person or persons who ultimately owns or controls an interest in a legal entity or arrangement,
 such as a company, a trust, or a foundation[^5].
 
-<Img src="/img/creating-high-quality-knowledge-graphs/kgc-er-1.png" width=600 alt="Open Ownership and OpenSanctions data schema">
+<Img src="/blog/img/creating-high-quality-knowledge-graphs/kgc-er-1.png" width=600 alt="Open Ownership and OpenSanctions data schema">
 
 The term "Entity" can refer to a person or company, and the goal of entity resolution is to match like-for-like entities between the two data sources.
 Because the full dataset from these providers is rather large, we'll only be using _slices_ of data in this example.
@@ -55,7 +55,7 @@ The data from Open Ownership and OpenSanctions is acquired in the form of line-d
 file (for the person named Abassin Badshah) is shown below. The data consists of some fields that are common to both sources (such as
 names, addresses, dates of birth, relationships, etc.), but others that are unique to each source.
 
-<Img src="/img/creating-high-quality-knowledge-graphs/kgc-er-2.png" alt="Example data records from OpenOwnership and OpenSanctions">
+<Img src="/blog/img/creating-high-quality-knowledge-graphs/kgc-er-2.png" alt="Example data records from OpenOwnership and OpenSanctions">
 
 ## Senzing pipeline
 
@@ -119,7 +119,7 @@ subgraph that connects like-for-like entities between the two sources. The two o
 between the entities when they represent the same real-world entity. No source data is removed or changed
 in the process -- Senzing simply bridges the two subgraphs, as per the following schema:
 
-<Img src="/img/creating-high-quality-knowledge-graphs/kgc-er-3.png" width=600 alt="Senzing entity resolution output">
+<Img src="/blog/img/creating-high-quality-knowledge-graphs/kgc-er-3.png" width=600 alt="Senzing entity resolution output">
 
 This is the entity resolution workflow in a nutshell! We're now ready to preprocess all the data for ingestion into Kuzu.
 
@@ -250,7 +250,7 @@ WHERE a.descrip CONTAINS "Abassin"
 RETURN * LIMIT 50
 ```
 
-<Img src="/img/creating-high-quality-knowledge-graphs/kgc-er-4.png" alt="Kuzu graph around the vicinity of the entity 'Abassin Badshah'">
+<Img src="/blog/img/creating-high-quality-knowledge-graphs/kgc-er-4.png" alt="Kuzu graph around the vicinity of the entity 'Abassin Badshah'">
 
 - Yellow nodes represent the entities obtained from the Senzing entity resolution workflow
 - Green nodes represent `OpenSanctions` entities
@@ -351,7 +351,7 @@ WHERE c.id = "sz_100036"
 RETURN * LIMIT 200;
 ```
 
-<Img src="/img/creating-high-quality-knowledge-graphs/kgc-er-5.png" alt="Kuzu graph around the vicinity of the entity 'Victor Nyland Poulsen'">
+<Img src="/blog/img/creating-high-quality-knowledge-graphs/kgc-er-5.png" alt="Kuzu graph around the vicinity of the entity 'Victor Nyland Poulsen'">
 
 Using the power of graph algorithms, we are able to uncover further useful insights to guide the investigation!
 

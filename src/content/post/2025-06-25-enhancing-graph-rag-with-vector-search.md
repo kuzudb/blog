@@ -3,7 +3,7 @@ slug: "enhancing-graph-rag-with-vector-search"
 title: "Towards agentic Graph RAG: Enhancing graph retrieval with vector search"
 description: "A simple agentic router-based Graph RAG workflow with tool calling using BAML and Kuzu."
 pubDate: "June 25 2025"
-heroImage: "/img//enhancing-graph-rag-with-vector-search/agent-rag-2.png"
+heroImage: "/blog/img//enhancing-graph-rag-with-vector-search/agent-rag-2.png"
 categories: ["example"]
 authors: ["prashanth"]
 tags: ["kuzu", "cypher", "graph", "rag", "llm", "agent"]
@@ -26,7 +26,7 @@ This post picks up from where I left off, by reusing the existing graph of patie
 the conditions the drugs treat, and the side effects (symptoms) experienced by the patients taking these drugs.
 The schema of this graph is shown below.
 
-<Img src="/img/enhancing-graph-rag-with-vector-search/graph-schema.png" width="700" alt="Graph schema of the patient-drug graph" />
+<Img src="/blog/img/enhancing-graph-rag-with-vector-search/graph-schema.png" width="700" alt="Graph schema of the patient-drug graph" />
 <p style="text-align: center;"><em>Graph schema showing patients, drugs, conditions and side effects. See <a href="/post/unstructured-data-to-graph-baml-kuzu/">this post</a> for details on how this graph was constructed from multiple unstructured sources</em></p>
 
 ---
@@ -73,7 +73,7 @@ needed: a) run it again in a loop, or b) pass the work to other LLM-enabled agen
 
 The level of autonomy of an agentic workflow can be succinctly summarized by the following figure.[^4]
 
-<Img src="/img/enhancing-graph-rag-with-vector-search/agent-rag-1.png" alt="Graph schema of the patient-drug graph" />
+<Img src="/blog/img/enhancing-graph-rag-with-vector-search/agent-rag-1.png" alt="Graph schema of the patient-drug graph" />
 
 At the lower end of the scale, the LLM is used to route the control flow to upstream/downstream
 components that may be fully deterministic in and of themselves. At the upper end of
@@ -95,7 +95,7 @@ retrieve from the graph. The results from this query are then appropriately form
 context to an answer-generation LLM, which can formulate a response in natural language. An example of this
 (when it works as intended) is shown below.
 
-<Img src="/img/enhancing-graph-rag-with-vector-search/rag-text2cypher-1.png" alt="Text2Cypher methodology in Graph RAG" />
+<Img src="/blog/img/enhancing-graph-rag-with-vector-search/rag-text2cypher-1.png" alt="Text2Cypher methodology in Graph RAG" />
 
 Vanilla Graph RAG, based on Text2Cypher alone, has an important limitation: even if the Cypher query
 generated is syntactically correct, if there isn't an _exact_ `MATCH` for the value specified in the query,
@@ -103,7 +103,7 @@ it will return an empty result. In the example below, the question is asking for
 "sleepiness", but the database has nodes with the side effect "drowsiness", resulting in an empty result from the Cypher query
 because no exact match is found. Not ideal by any means.
 
-<Img src="/img/enhancing-graph-rag-with-vector-search/rag-text2cypher-2.png" alt="When Text2Cypher doesn't work in Graph RAG!" />
+<Img src="/blog/img/enhancing-graph-rag-with-vector-search/rag-text2cypher-2.png" alt="When Text2Cypher doesn't work in Graph RAG!" />
 
 Naively running a single pass of Text2Cypher can quite often fail to return a useful response from
 the graph query. This is why vector search (based on semantic similarity)
@@ -386,7 +386,7 @@ For the example mentioned earlier -- where the user asks for drugs that cause "s
 because we have the term "drowsiness" in the database, we would expect the following sequence of
 events when the vector search tool is made available:
 
-<Img src="/img/enhancing-graph-rag-with-vector-search/rag-text2cypher-3.png" width="700" alt="Example agent routing workflow" />
+<Img src="/blog/img/enhancing-graph-rag-with-vector-search/rag-text2cypher-3.png" width="700" alt="Example agent routing workflow" />
 
 This time, the LLM router picks the `VectorSearchSymptoms` tool, which returns the most similar term to "sleepiness",
 i.e., "drowsiness". The LLM then uses this additional context to write a better Cypher query, which is then run on the Kuzu database.
@@ -398,7 +398,7 @@ RAG system and test it, end-to-end!
 The logical flow of the application is described in the figure below. All deterministic steps
 are shown as grey circles, and the LLM-driven steps are clearly marked as such.
 
-<Img src="/img/enhancing-graph-rag-with-vector-search/agent-rag-2.png" alt="Agent router workflow for Graph RAG using BAML and Kuzu" />
+<Img src="/blog/img/enhancing-graph-rag-with-vector-search/agent-rag-2.png" alt="Agent router workflow for Graph RAG using BAML and Kuzu" />
 
 The workflow starts with a user's question in natural language. This is translated into a Cypher query via an LLM that can interpret
 the graph schema. The query is run on the Kuzu database, after which the following sequence of steps occurs:
@@ -418,7 +418,7 @@ From an architectural standpoint, the system is structured as shown below. BAML 
 and the client code generated by BAML's runtime is utilized by Python helper functions and classes. These are then exposed as
 endpoints on a FastAPI server, which can then be used by a Streamlit frontend.
 
-<Img src="/img/enhancing-graph-rag-with-vector-search/agent-rag-3.png" width="600" alt="Components of the agentic Graph RAG architecture" />
+<Img src="/blog/img/enhancing-graph-rag-with-vector-search/agent-rag-3.png" width="600" alt="Components of the agentic Graph RAG architecture" />
 
 #### BAML for prompting
 
@@ -441,7 +441,7 @@ it's straightforward to implement a frontend interface to which a user can ask q
 An example UI written in Streamlit is shown below. This is for representative purposes only -- you can add
 as much custom functionality as required, in languages other than Python.
 
-<Img src="/img/enhancing-graph-rag-with-vector-search/graph-rag-agent-router.gif" alt="Demo of the BAML-Kuzu router agent Graph RAG workflow in action" />
+<Img src="/blog/img/enhancing-graph-rag-with-vector-search/graph-rag-agent-router.gif" alt="Demo of the BAML-Kuzu router agent Graph RAG workflow in action" />
 
 ## Evaluation
 
@@ -498,7 +498,7 @@ Q6 and Q7 are not expected to pass, regardless of the LLM used, because these qu
 do not have an exact match in the database (vector search is needed to find similar terms). Under these conditions,
 `gpt-4.1` and `gemini-2.0-flash` still perform admirably well.
 
-<Img src="/img/enhancing-graph-rag-with-vector-search/vanilla_graph_rag_heatmap.png" alt="Evaluation results for vanilla Graph RAG" />
+<Img src="/blog/img/enhancing-graph-rag-with-vector-search/vanilla_graph_rag_heatmap.png" alt="Evaluation results for vanilla Graph RAG" />
 
 #### Router-Agent Graph RAG
 
@@ -508,7 +508,7 @@ The next best model is `google/gemini-2.5-flash`, which passes 9/10 tests. The r
 models perform better than in the vanilla Graph RAG case, but still do not always produce the expected answer,
 meaning that somewhere in the intermediate stages, the Cypher queries they generated weren't good enough.
 
-<Img src="/img/enhancing-graph-rag-with-vector-search/router_agent_graph_rag_heatmap.png" alt="Evaluation results for agentic router-based Graph RAG" />
+<Img src="/blog/img/enhancing-graph-rag-with-vector-search/router_agent_graph_rag_heatmap.png" alt="Evaluation results for agentic router-based Graph RAG" />
 
 One interesting observation is regarding the only failing test for the `google/gemini-2.5-flash` model, which several other LLMs pass.
 Inpecting the BAML logs for this test, the Cypher query generated by `google/gemini-2.5-flash`

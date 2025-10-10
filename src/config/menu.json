@@ -2,7 +2,7 @@
   "main": [
     {
       "name": "Blog",
-      "url": "/"
+      "url": "/blog"
     },
     {
       "name": "Docs",
@@ -10,11 +10,11 @@
     },
     {
       "name": "Tags",
-      "url": "/tags"
+      "url": "/blog/tags"
     },
     {
       "name": "Categories",
-      "url": "/categories"
+      "url": "/blog/categories"
     }
   ]
 }

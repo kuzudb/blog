@@ -3,7 +3,7 @@ slug: "llms-graphs-part-2"
 title: "RAG using unstructured data and the role of knowledge graphs"
 description: "Uncovering the design space of RAG systems that use unstructured data and future work directions that are important."
 pubDate: "January 15 2024"
-heroImage: "/img/2024-01-15-llms-graphs-part-2/triples-based-rag-overview.png"
+heroImage: "/blog/img/2024-01-15-llms-graphs-part-2/triples-based-rag-overview.png"
 categories: ["concept"]
 authors: ["semih"]
 tags: ["vision", "overview", "llm", "rag"]
@@ -49,7 +49,7 @@ its potential benefits should be subjected to rigorous evaluation, e.g., as majo
 I will skip the overview of RAG systems, which I covered in [the previous post](//kuzudb.github.io/docs/blog/llms-graphs-part-1#a-note-on-the-term-rag).
 The picture of RAG systems that use unstructured data looks as follows:
 
-![](/img/2024-01-15-llms-graphs-part-2/rag-unstructured-overview.png)
+![](/blog/img/2024-01-15-llms-graphs-part-2/rag-unstructured-overview.png)
 
 An enterprise has a corpus of unstructured data, i.e., some documents with text.
 As a preprocessing step (omitted from the figure), the information in these documents are indexed and 
@@ -89,7 +89,7 @@ on "[Q&A with RAG](https://python.langchain.com/docs/use_cases/question_answerin
 "[Building a RAG from Scratch](https://docs.llamaindex.ai/en/stable/examples/low_level/oss_ingestion_retrieval.html)" documentation.
 The below figure shows the pre-processing and indexing steps of standard RAG-U:
 
-![](/img/2024-01-15-llms-graphs-part-2/standard-rag-preprocessing.png)
+![](/blog/img/2024-01-15-llms-graphs-part-2/standard-rag-preprocessing.png)
 
 **First a note on vector indices:** A vector index is one that indexes a
 set of d-dimensional vectors and given a query vector w can answer several queries:
@@ -125,7 +125,7 @@ necessarily balanced but sa-trees return exact answers.
 Back to RAG-U. After the preprocessing step, the vector index that contains the chunks of documents is used
 in a RAG-U system as follows:
 
-![](/img/2024-01-15-llms-graphs-part-2/standard-rag-overview.png)
+![](/blog/img/2024-01-15-llms-graphs-part-2/standard-rag-overview.png)
 
 The step are as follows: (i) The question $Q_{NL}$ is first embedded into
 the same d-dimensional vector space as the chunks were. Let's call this vector $v_{Q}$;
@@ -161,14 +161,14 @@ and it is a mix of vector index + a KG stored in a GDBMS.
 The preprocessing over standard RAG-U (see the preprocessing figure above)
 would be enhanced with an additional step as follows:
 
-![](/img/2024-01-15-llms-graphs-part-2/kg-enhanced-rag-preprocessing.png)
+![](/blog/img/2024-01-15-llms-graphs-part-2/kg-enhanced-rag-preprocessing.png)
 
 That is, using some entity extraction mechanism, the chunks would be linked to the entities that
 they mention in the KG (assuming the KG contains these entities as nodes). You can think of this linking 
 as adding new edges to the KG that relate entities to some chunkIDs that identify the chunks in the vector index. 
 After the preprocessing step, the standard RAG-U system would be enhanced as follows:
 
-![](/img/2024-01-15-llms-graphs-part-2/kg-enhanced-rag-overview.png)
+![](/blog/img/2024-01-15-llms-graphs-part-2/kg-enhanced-rag-overview.png)
 
 Similar to standard RAG-U, we have a vector index and additionally a KG, say stored in a GDBMS.
 As before $Q_{NL}$ is embedded into a vector $v_Q$, whose k nearest neighbors
@@ -215,7 +215,7 @@ In this approach, the answer to the "what additional data" question is "triples 
 The answer to the "how to fetch" question is to do a retrieval of these triples from a GDBMS. 
 Here is the preprocessing step:
 
-![](/img/2024-01-15-llms-graphs-part-2/triples-based-rag-preprocessing.png)
+![](/blog/img/2024-01-15-llms-graphs-part-2/triples-based-rag-preprocessing.png)
 
 Using some triple extraction, the unstructured document is pre-processed to generate a KG. I will discuss
 this step further but overall you can use either a triple extraction model, such as [REBEL](https://huggingface.co/Babelscape/rebel-large) or another model, or an LLM directly. Both can be used off-the-shelf. Then, these triples, which form
@@ -223,7 +223,7 @@ a KG, are stored in a GDBMS and used in RAG in some form. I'm giving one example
 are possible. The approach I will show
 is implemented in the examples used in LlamaIndex's documentations using [LlamaIndex KnowledgeGraphIndex](https://docs.llamaindex.ai/en/stable/examples/index_structs/knowledge_graph/KnowledgeGraphDemo.html):
 
-![](/img/2024-01-15-llms-graphs-part-2/triples-based-rag-overview.png)
+![](/blog/img/2024-01-15-llms-graphs-part-2/triples-based-rag-overview.png)
 
 The triples are stored in a GDBMS. You can use a [LlamaIndex GraphStore](https://docs.llamaindex.ai/en/stable/community/integrations/graph_stores.html) for this and Kuzu has an implementation; see the [KuzuGraphStore demo here](https://docs.llamaindex.ai/en/stable/examples/index_structs/knowledge_graph/KuzuGraphDemo.html). The system extract entities using $Q_{NL}$, using some
 entity or keyword extractor. In the LlamaIndex demos, this is done by using an LLM. Specifically,

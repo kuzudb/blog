@@ -4,7 +4,7 @@ title: "KùzuExplorer: An interactive tool to visualize graph query results and 
 description: "A browser-based frontend to visualize and explore graph database schemas and
 Cypher query results during prototyping phase."
 pubDate: "October 25 2023"
-heroImage: "/img/2023-10-25-kuzuexplorer/query-result-node-link-view.png"
+heroImage: "/blog/img/2023-10-25-kuzuexplorer/query-result-node-link-view.png"
 categories: ["example"]
 authors: ["chang"]
 tags: ["visualization"]
@@ -33,7 +33,7 @@ KùzuExplorer comes bundled with several pre-existing databases, one of which yo
 To load one of these databases, click the `Datasets` tab on the top right corner on your landing page
 and then the `Load Dataset` button as shown in the below figure.
 
-![](/img/2023-10-25-kuzuexplorer/preexisting-datasets.png)
+![](/blog/img/2023-10-25-kuzuexplorer/preexisting-datasets.png)
 
 ## Schema Panel: Schema Exploring and Editing
 
@@ -45,7 +45,7 @@ node/rel tables, inserting new node/rel tables, or dropping node/rel tables. The
 interactively by clicking buttons, which automatically generate and run the corresponding Cypher queries
 (unless you have launched KùzuExplorer [in read-only mode](https://kuzudb.github.io/docs/visualization/#access-mode)).
 
-![](/img/2023-10-25-kuzuexplorer/schema-panel.png)
+![](/blog/img/2023-10-25-kuzuexplorer/schema-panel.png)
 
 More details
 about what can be done in the Schema panel can be found [here](https://kuzudb.github.io/docs/visualization/schema-panel).
@@ -68,7 +68,7 @@ MATCH (a)-[e]->(b)
 RETURN *
 ```
 
-![](/img/2023-10-25-kuzuexplorer/query-result-node-link-view.png)
+![](/blog/img/2023-10-25-kuzuexplorer/query-result-node-link-view.png)
 
 You can inspect individual nodes and edge in the query results by clicking on them. More details
 about what can be done in the Shell panel can be found [here](https://kuzudb.github.io/docs/visualization/shell-panel).

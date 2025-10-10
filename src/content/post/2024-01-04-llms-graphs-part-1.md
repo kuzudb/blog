@@ -3,7 +3,7 @@ slug: "llms-graphs-part-1"
 title: "RAG using structured data: Overview & important questions"
 description: "An overview of the area of retrieval augmented generation (RAG) using structured data"
 pubDate: "January 04 2024"
-heroImage: "/img/2024-01-04-llms-graphs-part-1/rag-using-structured-data.png"
+heroImage: "/blog/img/2024-01-04-llms-graphs-part-1/rag-using-structured-data.png"
 categories: ["concept"]
 authors: ["semih"]
 tags: ["vision", "overview", "llm", "rag"]
@@ -83,7 +83,7 @@ are called "RAG systems" in some documentations. I will use the term in this bro
 You can build RAG-based Q&A systems by using structured and/or unstructured
 data. The high-level views of these systems look like this:
 
-![](/img/2024-01-04-llms-graphs-part-1/qa-over-enterprise-data.png)
+![](/blog/img/2024-01-04-llms-graphs-part-1/qa-over-enterprise-data.png)
 
 ## RAG Using Structured Data: Text-to-High-level-Query
 *Note: If you are familiar with how to develop RAG systems with LangChain and LlamaIndex, you can directly skip
@@ -95,7 +95,7 @@ Many blog posts and several papers concern Q&A systems that simply convert
 $Q_{NL}$ to a high-level query languge, such as SQL, Cypher, or SPARQL, using an LLM.
 The figure below describes the overall approach:
 
-![](/img/2024-01-04-llms-graphs-part-1/rag-using-structured-data.png)
+![](/blog/img/2024-01-04-llms-graphs-part-1/rag-using-structured-data.png)
 
 $Q_{NL}$, the schema of a database, and optionally
 some example natural language question and high-level query examples, are given
@@ -276,7 +276,7 @@ Policy, Account, Claims, Insurable Object, among others, and their relationships
 The paper has a benchmark of 43 natural language questions and compares 2 approaches to generate the SQL query.
 The below figure shows an overview of these approaches for reference:
 
-![](/img/2024-01-04-llms-graphs-part-1/two-sql-generation-approaches.png)
+![](/blog/img/2024-01-04-llms-graphs-part-1/two-sql-generation-approaches.png)
 
 1. Direct SQL Generation: In this approach, $Q_{NL}$ and the relational schema of the OMG database is given
    to GPT-4. The schema is given in terms of `CREATE TABLE` statements, such as:

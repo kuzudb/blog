@@ -3,7 +3,7 @@ slug: "vector-indices"
 title: "Vector Indices Explained Through the FES Theorem"
 description: "This is the first of two blog posts explaining the foundation of HNSW vector indices and how they are implemented in Kuzu."
 pubDate: "July 23 2025"
-heroImage: "/img/vector-indices/fez-wiki.png"
+heroImage: "/blog/img/vector-indices/fez-wiki.png"
 categories: ["release"]
 authors: ["semih"]
 tags: ["vector-index", "hnsw", "vector"]
@@ -44,7 +44,7 @@ by explaining HNSW in light of kd trees and sa trees, the HNSW design will look
 more intuitive to people. 
 
 <figure style="float: right; width: 200px; margin: 0 0 1em 1em;">
-  <img src="/img/vector-indices/fez-wiki.png" alt="A fez." style="width: 100%;" />
+  <img src="/blog/img/vector-indices/fez-wiki.png" alt="A fez." style="width: 100%;" />
   <figcaption style="text-align: center; font-size: 0.9em;">
     A fes (in English fez). 
   </figcaption>
@@ -120,7 +120,7 @@ Kd trees are balanced trees that organize vectors by recursively dividing the
 space into two equal-sized partitions along one of the dimensions.
 Let's suppose we have the following 2D vectors on the left.
 
-<img width=900px src="/img/vector-indices/kd-tree.png" alt="Example set of 2D vectors and Kd tree." />
+<img width=900px src="/blog/img/vector-indices/kd-tree.png" alt="Example set of 2D vectors and Kd tree." />
 
 We first split along one dimension, say the x dimension. That is, we sort the vectors according to their
 x-axis values and then find the median vector.
@@ -270,7 +270,7 @@ Below is an example sa tree that could be formed if (5,3) is picked as the initi
 a slightly modified version of our running example above (I'm adding two new vectors (0,2) and (0,0)).
 
 
-<img width=500px src="/img/vector-indices/sa-tree.png" alt="An example sa tree." />
+<img width=500px src="/blog/img/vector-indices/sa-tree.png" alt="An example sa tree." />
 
 The picture shows the clusters in the first level of the tree with red ovals. It also shows one of the
 second level clusters in a blue oval containing 3 points: (1,1), (0,0), and (0,2). The search algorithm is exactly the same as before, 
@@ -310,7 +310,7 @@ Finally, let's cover our main index: the HNSW index. An HNSW index changes the s
 First, the construction algorithm is different. Instead of a tree, HNSW indices are graphs.
 They may look as below in our modified running example[^6]:
 
-<img width=500px src="/img/vector-indices/hnsw.png" alt="Example HNSW index." />
+<img width=500px src="/blog/img/vector-indices/hnsw.png" alt="Example HNSW index." />
 
 I will omit the pseudocode of the construction algorithm but it works as follows. We first pick a value $M$, which sets the maximum degree of 
 nodes in the index.
@@ -370,7 +370,7 @@ kNNSearch(q, k, entry):
 ```
 
 <figure style="float: right; width: 200px; margin: 0 0 1em 1em;">
-  <img src="/img/vector-indices/hnsw-original.png" alt="Original HNSW figure from the original HNSW paper." style="width: 100%;" />
+  <img src="/blog/img/vector-indices/hnsw-original.png" alt="Original HNSW figure from the original HNSW paper." style="width: 100%;" />
   <figcaption style="text-align: center; font-size: 0.9em;">
     Original HNSW figure from the <a href="https://arxiv.org/abs/1603.09320">original paper</a>.
   </figcaption>

@@ -3,9 +3,9 @@
     "title": "Blog - Kuzu",
     "base_url": "https://kuzudb.github.io/blog",
     "base_path": "/",
-    "favicon": "/favicon.ico",
-    "logoLight": "/logoLight.png",
-    "logoDark": "/logoDark.png",
+    "favicon": "/blog/favicon.ico",
+    "logoLight": "/blog/logoLight.png",
+    "logoDark": "/blog/logoDark.png",
     "lang": "en",
     "description": "Kuzu is a highly scalable, extremely fast, easy-to-use embeddable graph database",
     "pageSize": 6
@@ -25,6 +25,6 @@
   "author": {
     "name": "Kuzu Team",
     "title": "Kuzu Team",
-    "avatar": "https://kuzudb.github.io/img/blog/team.jpg"
+    "avatar": "https://kuzudb.github.io/blog/img/blog/team.jpg"
   }
 }

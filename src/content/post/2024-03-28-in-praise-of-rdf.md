@@ -3,7 +3,7 @@ slug: "in-praise-of-rdf"
 title: "In praise of RDF"
 description: "RDF data model, its virtues, vices, and applications."
 pubDate: "March 28 2024"
-heroImage: "/img/2024-03-28-in-praise-of-rdf/data-models.png"
+heroImage: "/blog/img/2024-03-28-in-praise-of-rdf/data-models.png"
 categories: ["concept"]
 authors: ["semih"]
 tags: ["rdf"]
@@ -170,7 +170,7 @@ of `gc:Levis-511`.
 Some triples are between resources, such as <`gc:Levis-511`, `rdf:type`, `gc:LooseJeans`>,
 while others are between a resource and literal, such as <`gc:Levis-511`, `gc:jean-size`, `32`>.
 
-<Image src="/img/2024-03-28-in-praise-of-rdf/product-catalog.png" width="800" />
+<Image src="/blog/img/2024-03-28-in-praise-of-rdf/product-catalog.png" width="800" />
 
 Let me now highlight how expressive and flexible RDF is:
 
@@ -198,7 +198,7 @@ the two popular graph-based data models, property graph (PG) and RDF on the othe
 I am also adding Kuzu's variant of the PG model, which we call the *structured* PG model, into this framework.
 The framework is shown in the figure below.
 
-<Image src="/img/2024-03-28-in-praise-of-rdf/data-models.png" width="600" />
+<Image src="/blog/img/2024-03-28-in-praise-of-rdf/data-models.png" width="600" />
 
 Think of the x-axis as representing the flexibility of the model to express complex domains (flexibility increases
 from left to right), and the y-axis as representing how much a DBMS can exploit in the structure
@@ -260,7 +260,7 @@ and in logic, things get very abstract very quickly, and we might soon find ours
 questioning whether a spoon we are looking at really exists. Let me just make the point of why RDF and its standards
 form a knowledge representation system.
 
-<Image src="/img/2024-03-28-in-praise-of-rdf/rdf-standards.png" width="300" />
+<Image src="/blog/img/2024-03-28-in-praise-of-rdf/rdf-standards.png" width="300" />
 
 The figure above[^6] shows four of the important standards around RDF.
 These come with a standard set of terms, such as `rdf:type` or `rdfs:subClassOf`,
@@ -541,7 +541,7 @@ To demonstrate what is possible in a system that can reason,
 consider the figure below copy-pasted from the Brachman and Levesque book on KRRs
 (Figure 2.1 there):
 
-<Image src="/img/2024-03-28-in-praise-of-rdf/three-boxes.png" width="600" />
+<Image src="/blog/img/2024-03-28-in-praise-of-rdf/three-boxes.png" width="600" />
 
 
 Suppose we model the boxes as tuples, and we are able to express that

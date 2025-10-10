@@ -60,7 +60,7 @@ const fullHeroImage = heroImage
           <CategoryIcon />
           {
             categories?.slice(0, 1).map((category) => (
-              <a href={`/categories/${slugify(category)}`} class="hover:text-primary mr-2 font-medium capitalize">
+              <a href={`/blog/categories/${slugify(category)}`} class="hover:text-primary mr-2 font-medium capitalize">
                 {category}
               </a>
             ))
@@ -83,7 +83,7 @@ const fullHeroImage = heroImage
       {
         tags?.map((tag) => (
           <a
-            href={`/tags/${slugify(tag)}`}
+            href={`/blog/tags/${slugify(tag)}`}
             class="mb-2 mr-2 inline-block rounded-full bg-zinc-200 px-3 py-1 text-sm font-semibold capitalize text-zinc-700 dark:bg-zinc-900 dark:text-zinc-400"
           >
             #{tag}

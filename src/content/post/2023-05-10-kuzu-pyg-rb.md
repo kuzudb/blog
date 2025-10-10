@@ -3,7 +3,7 @@ slug: "kuzu-pyg-remote-backend"
 title: "Scaling Pytorch Geometric GNNs With Kuzu"
 description: "A walkthrough on how to use Kuzu as a Pytorch Geometric (PyG) remote backend"
 pubDate: "May 10 2023"
-heroImage: "/img/default.png"
+heroImage: "/blog/img/default.png"
 categories: ["tutorial"]
 authors: ["chang", "semih"]
 tags: ["pytorch-geometric", "gnn"]
