@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Blog - Kuzu",
-    "base_url": "https://blog.kuzudb.com",
+    "base_url": "https://kuzudb.github.io/blog",
     "base_path": "/",
     "favicon": "/favicon.ico",
     "logoLight": "/logoLight.png",
@@ -25,6 +25,6 @@
   "author": {
     "name": "Kuzu Team",
     "title": "Kuzu Team",
-    "avatar": "https://kuzudb.com/img/blog/team.jpg"
+    "avatar": "https://kuzudb.github.io/img/blog/team.jpg"
   }
 }

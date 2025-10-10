@@ -298,7 +298,7 @@ results in the graph being saved to a local directory.
 ## Querying the graph
 
 We then run some simple queries to test that the data was loaded correctly. We can either create
-a standalone script using the client SDK of your choice, or fire up a [Kuzu CLI](//docs.kuzudb.com/getting-started/cli)
+a standalone script using the client SDK of your choice, or fire up a [Kuzu CLI](//kuzudb.github.io/docs/getting-started/cli)
 shell and run some Cypher queries.
 
 The first query finds all the clients who transacted with the merchants of "Starbucks".
@@ -440,7 +440,7 @@ your use case!
 
 The code to reproduce the workflow shown in this post can be found in the
 [graphdb-demo](https://github.com/kuzudb/graphdb-demo/tree/main/src/python/transactions) repository.
-It uses Kuzu's Python API, but you are welcome to use the client API [of your choice](//docs.kuzudb.com/client-apis).
+It uses Kuzu's Python API, but you are welcome to use the client API [of your choice](//kuzudb.github.io/docs/client-apis).
 
 ## Further reading
 

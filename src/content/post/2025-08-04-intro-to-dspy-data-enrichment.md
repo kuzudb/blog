@@ -491,7 +491,7 @@ among the early Physics laureates.
 > Who are the female Chemistry Nobel laureates affiliated with non-US institutions?
 
 ```cypher
-// Multi-predicate, multi-path finding query 
+// Multi-predicate, multi-path finding query
 MATCH (s:Scholar)-[:WON]->(p:Prize),
       (s)-[:AFFILIATED_WITH]->(i:Institution)-[:IS_LOCATED_IN]->(city:City)-[:IS_CITY_IN]->(country:Country)
 WHERE s.scholar_type = "laureate"
@@ -525,8 +525,7 @@ incorporate DSPy's core primitives into our pipeline, without writing a single p
 This opens up a powerful new way to work with LLMs, where you can focus on describing your _intent_
 rather getting caught up in the intricate details of how to properly phrase the prompt.
 
-Of course, we could just as well have worked with LLMs using any other framework (e.g., BAML, as
-we've shown in an [earlier post](/post/unstructured-data-to-graph-baml-kuzu), or a raw LLM API call).
+Of course, we could just as well have worked with LLMs using any other framework (e.g., BAML or a raw LLM API call).
 However, the methodology we presented (and the reason we chose DSPy) is because
 it's actually quite general-purpose and flexible enough
 to be applied in several other domains and tasks. It's also scalable from a cost and performance perspective,
@@ -540,7 +539,7 @@ you curious to learn more.
 
 You can check out the code and data to reproduce this entire workflow
 [here](https://github.com/kuzudb/dspy-kuzu-demo). Stay tuned for more,
-star [Kuzu](https://github.com/kuzudb/kuzu) on GitHub, and reach out to us on [Discord](https://kuzudb.com/chat),
+star [Kuzu](https://github.com/kuzudb/kuzu) on GitHub, and reach out to us on [Discord](https://kuzudb.github.io/chat),
 or on [X](https://x.com/kuzudb), to share your thoughts! 🚀
 
 ---

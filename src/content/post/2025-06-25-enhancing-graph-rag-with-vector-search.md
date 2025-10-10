@@ -32,7 +32,7 @@ The schema of this graph is shown below.
 ---
 
 #### TL;DR: The key takeaways are:
- 
+
 - **Not 0 to 1**: Real world agentic systems exhibit a spectrum of autonomy (the degree of autonomy in the
 system is not binary). These systems are typically a combination of autonomous agentic components driven by LLMs,
 and deterministic components that involve hardcoded logic.
@@ -84,7 +84,7 @@ and guardrails to guide the system towards the desired outcome.
 
 ## Why Graph RAG is inherently agentic
 
-Per the definition from [prior posts](/post/llms-in-each-stage-of-a-graph-rag-chatbot) in this blog, Graph RAG is a form of RAG where the retrieval
+Graph RAG is a form of RAG where the retrieval
 step depends on a knowledge graph, providing the answer-generation LLM relevant context based on factual
 information in the graph -- this is in contrast to retrieving the "most semantically similar"
 text based on embeddings of unstructured data in vector-based RAG.
@@ -121,7 +121,7 @@ starting with a routing-based approach, and testing it end-to-end to see if the 
 
 ## Create a vector index
 
-Kuzu provides a performant, on-disk HNSW index via a [vector extension](https://docs.kuzudb.com/extensions/vector/)
+Kuzu provides a performant, on-disk HNSW index via a [vector extension](https://kuzudb.github.io/docs/extensions/vector/)
 that scales as your data grows in size. You simply store vector embeddings (which are basically
 floating point arrays of a fixed dimensionality) as properties on your node tables. In this graph, there will be two
 vector indices -- one for the `Condition` node table's `name` property, and another for the `Symptom` node table's
@@ -615,7 +615,7 @@ to be following these developments and contributing integrations to this ever-gr
 Over the coming months, I'll be exploring and building with some of these
 agent frameworks, so stay tuned for more posts on this topic!
 
-Join the Kuzu team on [Discord](https://kuzudb.com/chat) to ideate on your next Graph RAG
+Join the Kuzu team on [Discord](https://kuzudb.github.io/chat) to ideate on your next Graph RAG
 or agentic application!
 
 ## Code
